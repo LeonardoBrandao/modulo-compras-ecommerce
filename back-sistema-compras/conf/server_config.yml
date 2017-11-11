@@ -1,0 +1,35 @@
+url: jdbc:derby://localhost:1527/sistema_bancario
+driverJdbc: org.apache.derby.jdbc.ClientDriver
+user: app
+password: app
+
+server:
+  adminMinThreads: 1
+  adminMaxThreads: 64
+  adminContextPath: /
+  applicationContextPath: /
+  applicationConnectors:
+    - type: http
+      port: 7000
+  adminConnectors:
+    - type: http
+      port: 7001
+  requestLog:
+      appenders:
+         - type: file
+           threshold: ALL
+           currentLogFilename: log/server-requests.log
+           archivedLogFilenamePattern: log/server-requests-%d{yyyy-MM-dd}.log
+           archivedFileCount: 7
+           timeZone: UTC
+
+logging:
+  level: INFO
+  appenders:
+    - type: file
+      threshold: DEBUG
+      logFormat: "%-6level [%d{HH:mm:ss.SSS}] [%t] %logger{5} - %X{code} %msg %n"
+      currentLogFilename: log/server.log
+      archivedLogFilenamePattern: log/server-%d{yyyy-MM-dd}.log
+      archivedFileCount: 7
+      timeZone: UTC

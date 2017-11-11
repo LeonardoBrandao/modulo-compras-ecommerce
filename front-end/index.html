@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Página de Compras</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.5/sweetalert2.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Compras</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Vendas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./carrinho.html">Carrinho <span class="badge badge-info"></span></a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar (Nome ou código)"
+                       aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<section id="home-listing">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 my-5">
+                <div class="product-card">
+                    <img src="http://www.hezzitubones.com.br/wp-content/uploads/2016/11/imagem-Bon%C3%A9-trucker-de-moletom-e-tela-Frente-1.jpg" alt="" class="img-fluid">
+                    <h3 class="titulo">Boné Trucker de moletom e tela</h3>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad assumenda aut explicabo, laudantium nam nostrum optio? Est fugiat.</p>
+                    <h5 class="preco">R$ <span>50.00</span></h5>
+                    <a href="#" class="btn btn-primary btn-comprar" data-id="1">Comprar</a>
+                </div>
+            </div>
+            <div class="col-md-4 my-5">
+                <div class="product-card">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/71Yn1ZHfF2L._SL1000_.jpg" alt="" class="img-fluid">
+                    <h3 class="titulo">Mochila cinza</h3>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad assumenda aut explicabo, laudantium nam nostrum optio? Est fugiat.</p>
+                    <h5 class="preco">R$ <span>320.00</span></h5>
+                    <a href="#" class="btn btn-primary btn-comprar" data-id="2">Comprar</a>
+                </div>
+            </div>
+            <div class="col-md-4 my-5">
+                <div class="product-card">
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/81oyj8wrlCL._AC_.jpg" alt="" class="img-fluid">
+                    <h3 class="titulo">Steam Controller</h3>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad assumenda aut explicabo, laudantium nam nostrum optio? Est fugiat.</p>
+                    <h5 class="preco">R$ <span>30.00</span></h5>
+                    <a href="#" class="btn btn-primary btn-comprar" data-id="3">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.5/sweetalert2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script src="./js/functions.js"></script>
+
+</body>
+</html>
