@@ -22,19 +22,14 @@ public class ProdutoDaoRelacional implements ProdutoDaoInterface {
         Connection connection = conexao.getConnection();
         String sql = "";
         try {
-            sql = "SELECT * FROM produtoutos";
+            sql = "SELECT * FROM produtos";
             stmObterTodos = connection.prepareStatement(sql);
-            sql = "INSERT INTO contas VALUES (?,?)";
-            stmInserir = connection.prepareStatement(sql);
-            sql = "DELETE FROM contas WHERE cod=?";
+            sql = "DELETE FROM produtos WHERE codigo=?";
             stmApagar = connection.prepareStatement(sql);
-//            sql = "UPDATE produtoutos SET saldo=? WHERE nro_conta=?";
-//            stmAtualizar = connection.prepareStatement(sql);
-            sql = "SELECT * FROM produtoutos where cod=?";
+            sql = "SELECT * FROM produtos WHERE codigo=?";
             stmBuscarCod = connection.prepareStatement(sql);
-            sql = "SELECT * FROM produtoutos where nome=?";
+            sql = "SELECT * FROM produtos WHERE nome LIKE ?";
             stmBuscarNome = connection.prepareStatement(sql);
-            
         } catch (SQLException ex) {
             throw new ComprasDaoException("Erro ao preparar sentença SQL: " + sql);
         }
@@ -108,7 +103,7 @@ public class ProdutoDaoRelacional implements ProdutoDaoInterface {
     public Produto buscarNome(String nome) throws ComprasDaoException {
         Produto p = null;
         try {
-            stmBuscarNome.setString(1, nome);
+            stmBuscarNome.setString(1,"%" +  nome + "%");
             ResultSet resultados = stmBuscarNome.executeQuery();
             if (resultados.next()) {
                 p = new Produto(resultados.getString("nome"),
@@ -140,11 +135,10 @@ public class ProdutoDaoRelacional implements ProdutoDaoInterface {
                         resultados.getString("status"),
                         resultados.getInt("preco"),
                         resultados.getString("imagem"));
-              
             }
         } catch (SQLException ex) {
             throw new ComprasDaoException("Erro ao executar busca de produto pelo codigo");
         }
         return p;
-    }
+    }   
 }
