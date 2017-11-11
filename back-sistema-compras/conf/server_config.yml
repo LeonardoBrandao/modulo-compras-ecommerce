@@ -1,4 +1,4 @@
-url: jdbc:derby://localhost:1527/sistema_bancario
+url: jdbc:derby://localhost:1527/sistema_compras
 driverJdbc: org.apache.derby.jdbc.ClientDriver
 user: app
 password: app

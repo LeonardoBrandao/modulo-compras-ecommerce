@@ -19,7 +19,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Path("/")
+@Path("/compras")
 public class Recurso {
 
     private String url;
@@ -44,7 +44,7 @@ public class Recurso {
     @GET
     @Path("/produtos")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listaContas() {
+    public Response listaProdutos() {
         List<Produto> produtos;
         try {
             produtos = produtoDao.obterTodos();
@@ -56,9 +56,9 @@ public class Recurso {
     }
 
     @GET
-    @Path("/produto/{codigo}")
+    @Path("/produto/cod/{codigo}")
     @Produces({MediaType.APPLICATION_JSON})
-    public Response pesquisarContaCod(@PathParam("codigo") String codigo) {
+    public Response pesquisarCodProdutos(@PathParam("codigo") String codigo) {
         Produto produto;
         try {
             produto = produtoDao.buscarCod(Integer.parseInt(codigo));
@@ -70,9 +70,9 @@ public class Recurso {
     }
     
     @GET
-    @Path("/produto/nome/{nome}")
+    @Path("/produto/{nome}")
     @Produces({MediaType.APPLICATION_JSON})
-    public Response pesquisarContaNome(@PathParam("nome") String nome) {
+    public Response pesquisarProdutosNome(@PathParam("nome") String nome) {
         Produto produto;
         try {
             produto = produtoDao.buscarNome(nome);
