@@ -28,7 +28,7 @@ public class ProdutoDaoRelacional implements ProdutoDaoInterface {
             stmApagar = connection.prepareStatement(sql);
             sql = "SELECT * FROM produtos WHERE codigo=?";
             stmBuscarCod = connection.prepareStatement(sql);
-            sql = "SELECT * FROM produtos WHERE nome LIKE ?";
+            sql = "SELECT * FROM produtos WHERE lower(nome) LIKE ?";
             stmBuscarNome = connection.prepareStatement(sql);
         } catch (SQLException ex) {
             throw new ComprasDaoException("Erro ao preparar sentença SQL: " + sql);
@@ -141,4 +141,15 @@ public class ProdutoDaoRelacional implements ProdutoDaoInterface {
         }
         return p;
     }   
+    
+    public static void main(String[] args) throws ConexaoException, ComprasDaoException, SQLException {
+        ConexaoInterface conexao = new ConexaoJavaDb("jdbc:derby://localhost:1527/sistema_compras", "org.apache.derby.jdbc.ClientDriver", "app", "app");
+        Connection connection = conexao.getConnection();
+        String sql = "INSERT INTO produtos VALUES (126, 'Fonte Corsair 450W', 'Corsair', 'Fonte Corsair 450W 80 Plus Bronze, confiabilidade e seguranca para seu PC.', 'Em estoque'," +
+" 'https://images1.kabum.com.br/produtos/fotos/91021/91021_index_gg.jpg', 249.00)";
+//        String sql = "DELETE FROM produtos WHERE codigo=124";
+        PreparedStatement stmInserir = connection.prepareStatement(sql);
+        stmInserir.executeUpdate();
+   }
+    
 }

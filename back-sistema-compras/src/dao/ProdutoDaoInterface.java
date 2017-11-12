@@ -15,7 +15,6 @@ import java.util.List;
 public interface ProdutoDaoInterface {
     List<Produto> obterTodos() throws ComprasDaoException;
     int inserir(Produto produto) throws ComprasDaoException;
-//    int atualizar(Produto produto) throws ComprasDaoException;
     int apagar(int codigo) throws ComprasDaoException;
     Produto buscarNome(String nome) throws ComprasDaoException;
     Produto buscarCod(int codigo) throws ComprasDaoException;

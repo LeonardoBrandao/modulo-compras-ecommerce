@@ -96,48 +96,4 @@ public class Recurso {
         }
         return Response.status(Status.ERROR).build();
     }
-
-//    @GET
-//    @Path("/inserirConta/{id}/{saldo}")
-//    @Produces({MediaType.APPLICATION_JSON})
-//    public Response inserirConta(@PathParam("id") String id, @PathParam("saldo") String saldo) {
-//        int result;
-//        try {
-//            Conta conta = new Conta(Long.parseLong(id), BigDecimal.valueOf(Long.parseLong(saldo)));
-//            result = contaDao.inserir(conta);
-//            return Response.ok(result).build();
-//        } catch (ComprasDaoException ex) {
-//            Logger.getLogger(Recurso.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        return Response.status(Status.ERROR).build();
-//    }
-//
-//    @GET
-//    @Path("/deletarConta/{id}")
-//    @Produces({MediaType.APPLICATION_JSON})
-//    public Response deletarConta(@PathParam("id") String id) {
-//        int result;
-//        try {
-//            result = contaDao.apagar(Long.parseLong(id));
-//            return Response.ok(result).build();
-//        } catch (ComprasDaoException ex) {
-//            Logger.getLogger(Recurso.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        return Response.status(Status.ERROR).build();
-//    }
-//
-//    @GET
-//    @Path("/alterarConta/{id}/{saldo}")
-//    @Produces({MediaType.APPLICATION_JSON})
-//    public Response alterarConta(@PathParam("id") String id, @PathParam("saldo") String saldo) {
-//        int result;
-//        try {
-//            Conta conta = new Conta(Long.parseLong(id), BigDecimal.valueOf(Long.parseLong(saldo)));
-//            result = contaDao.atualizar(conta);
-//            return Response.ok(result).build();
-//        } catch (ComprasDaoException ex) {
-//            Logger.getLogger(Recurso.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        return Response.status(Status.ERROR).build();
-//    }
 }
